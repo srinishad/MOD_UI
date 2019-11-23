@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+  background-color: #fefefe;
+  margin: 3% auto 15% auto; 
+  border: 1px solid #888;
+  width: 50%; 
+  margin-top: 79px;
+
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=number] {
+  width: 35%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=email]{
+    width:85%;
+    padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus ,input[type=email]:focus,input[type=number]{
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 15px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color:skyblue;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+form{
+    margin-top: -784px;
+    width: 1131px;
+    margin-left: 190px;
+}
+.highlight,.kk,.kkk{
+  color:red;
+}
+.nam{
+  color:RED;
+}
+.expr{
+  color:RED;
+}
+.time{
+  color:RED;
+}
+
+
+</style>
+</head>
+<body>
+
+<form  #mentorsignup="ngForm">
+   
+  <div class="container">
+    <h2>Mentor Register</h2>
+    <label for="email"><b>Email</b></label>
+    <input type="email" style="margin-left: 15px" placeholder="Enter Email" name="email" required [(ngModel)]="item.mentorEmail" [formControl]="email">
+    <div  *ngIf="email.errors && (email.dirty || email.touched)">
+        <div class="highlight">
+        <p  *ngIf="email.errors.required" > * Email is required </p> 
+        <p  *ngIf="email.errors.email"> * Email is not valid </p> 
+      </div>
+    </div>
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required [(ngModel)]="item.mentorName"  #name1="ngModel">
+    <div *ngIf="name1.errors && (name1.dirty || name1.touched)">
+      <div class="nam">
+        <p  *ngIf="name1.errors.required">Should not be empty </p> 
+      </div>
+    </div>
+    
+    <!-- <label for="psw-repeat" style="margin-left: 223px;"><b>Repeat Password</b></label> -->
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required [(ngModel)]="item.mentorPassword" pattern='(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}' #pass="ngModel">
+    
+    <!-- <input type="password" style="margin-left: 128px" placeholder="Repeat Password" name="repeat_password" required [(ngModel)]="repeat_password" appConfirmpassss="password" #cpassword="ngModel" > -->
+    <div  *ngIf="pass.errors && (pass.dirty || pass.touched)">
+      <div class="kk">
+        <p  *ngIf="pass.errors.required">should not be empty </p> 
+         <p  *ngIf="pass.errors.pattern"> Password must contain a capital letter, a special character and an integer </p>  
+      </div>
+    </div>
+    <!-- <div class="kkk">
+       <div  *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)">
+      <p  *ngIf="cpassword.errors.required">should not be empty </p> 
+    </div>
+    <span *ngIf="cpassword.touched && cpassword.errors?.notEqual">
+     <p> Password and Confirm Password does not match</p>
+    </span>
+  </div> -->
+    <label for="experience"><b>Experience</b></label>
+    <label for="listoftechnology" style="margin-left: 223px"><b>List of Skills</b></label>
+    <input type="number" placeholder=" Years of Experience" name="exp" required [(ngModel)]="item.mentorExperience" #exp="ngModel">
+    <div *ngIf="exp.errors && (exp.dirty || exp.touched)">
+      <div class="expr">
+        <p  *ngIf="exp.errors.required">Should not be empty </p> 
+      </div>
+    </div>
+    <input type="text" style="margin-left: 128px;"placeholder="list of Technology" name="listofexp" required [(ngModel)]="item.mentorSkills" #skills="ngModel">
+    <div *ngIf="skills.errors && (skills.dirty || skills.touched)">
+      <div class="skill">
+        <p  *ngIf="skills.errors.required">Should not be empty </p> 
+      </div>
+    </div>
+    <label for="timings"><b>Timings</b></label>
+    <label for="mobile" style="margin-left: 258px;"><b>Mobile</b></label>
+    <input type="text" placeholder="Timings" name="timings" required [(ngModel)]="item.mentorTimeslot" #time="ngModel">
+    <div *ngIf="time.errors && (time.dirty || time.touched)">
+      <div class="time">
+        <p  *ngIf="time.errors.required">Should not be empty </p> 
+      </div>
+    </div>
+    <input type="number" style="margin-left: 128px;"placeholder="mobile" name="mobile" required  [(ngModel)]="item.mentornumber" #mobile="ngModel">
+    <button type="submit" class="registerbtn" (click)="Add()" >Register</button>
+    <p>Already have an account? <a href="userlogin">Sign in</a>.</p>
+    <p>{{message}}</p>
+  
+  </div>
+</form>
+
+</body>
+</html>
+
+

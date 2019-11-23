@@ -1,0 +1,36 @@
+<style>
+    form{
+        margin-top: -743px;
+        width: 1131px;
+        margin-left: 52px;
+    }
+    .container {
+        padding: 16px;
+      background-color: #fefefe;
+      margin: 3% auto 15% auto; 
+      border: 1px solid #888;
+      width: 100%; 
+      margin-top: 76px;
+    }
+    button {
+      background-color:#708090;
+      color: white;
+      padding: 15px;
+      margin: 3px 0 22px 0;
+      border: none;
+      cursor: pointer;
+      width: 20%;
+      opacity: 0.9;
+    }
+    </style>
+    <form>
+      <div class="container">
+        <h1>Welcome Admin</h1>
+    <button  routerLink="adminuser">User Details </button><br>
+    <button type="submit" routerLink="adminmentor">Mentor Details</button><br>
+    <button type="submit" routerLink="admintechnology">Technology</button><br>
+    <button type="submit" routerLink="admintraining">Training</button><br>
+    <button type="submit" routerLink="adminpayment">Payment</button>
+    </div>
+    </form>
+    <router-outlet></router-outlet>

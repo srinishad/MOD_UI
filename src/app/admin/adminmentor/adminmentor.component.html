@@ -1,0 +1,33 @@
+<table class="table table-hover table-bordered" border="1" style="    margin-left: 408px;
+margin-top: -457px;">
+        <thead>
+            <tr>
+                    <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                
+                <th>Skills</th>
+                <th>Experience</th>
+                <th>Timeslot</th>
+                <th>Availability</th>
+                <th>Active</th>
+              
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of list">
+            <tr>
+                    <td>{{item.mentorId}}</td>
+                <td>{{item.mentorName}}</td>
+                <td>{{item.mentorEmail}}</td>
+                <td>{{item.mentorNumber}}</td>
+                <td>{{item.mentorSkills}}</td>
+                <td>{{item.mentorExperience}}</td>
+                <td>{{item.mentorTimeslot}}</td>
+                <td>{{item.mentorAvailability}}</td>
+                <td>{{item.mentorActive}}</td>
+                <td> <button type="submit" (click)="Delete(item.mentorId)">Delete</button></td>
+                <td> <button type="submit" (click)="Block(item.mentorId)">Block</button></td>
+            </tr>
+        </tbody>
+    </table>

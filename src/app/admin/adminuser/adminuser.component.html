@@ -1,0 +1,26 @@
+<table class="table table-hover table-bordered" border="1" style="    margin-left: 408px;
+margin-top: -457px;">
+        <thead>
+            <tr>
+                    <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+               
+                <th>Active</th>
+              
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of list">
+            <tr>
+                    <td>{{item.userId}}</td>
+                <td>{{item.userName}}</td>
+                <td>{{item.userEmail}}</td>
+                <td>{{item.userNumber}}</td>
+                <td>{{item.userActive}}</td>
+                <td> <button type="submit"(click)="Block(item.userId)">Block</button></td>
+                <td> <button type="submit" (click)="Delete(item.userId)">Delete</button></td>
+              
+            </tr>
+        </tbody>
+    </table>

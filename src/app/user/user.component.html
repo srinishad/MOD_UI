@@ -1,0 +1,85 @@
+<style>
+form{
+    margin-top: -743px;
+    width: 1131px;
+    margin-left: 52px;
+}
+.container {
+    padding: 16px;
+  background-color: #fefefe;
+  margin: 3% auto 15% auto; 
+  border: 1px solid #888;
+  width: 100%; 
+  margin-top: 76px;
+}
+button {
+  background-color:#708090;
+  color: white;
+  padding: 15px;
+  margin: 3px 0 22px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+}
+</style>
+<form>
+  <div class="container">
+      <h1>Welcome   {{items.userName}}!</h1>
+<button type="submit" (click)="UserCurTrainings()" >Trainings</button><br>
+<button type="submit" (click)="Update()" >Update Pasword</button><br>
+<button type="submit" >Notification</button><br>
+<button type="submit" (click)="logout()" >logout</button>
+</div>
+<html>
+<body style="margin-left: 375px;margin-top: -436px;">
+<b>Email</b>
+<br>
+<input type="email" placeholder="Enter email" name="emailid" [(ngModel)]="userEmail" required>
+<br>
+<b>Password</b>
+<br>
+<input type="password" placeholder="Enter password" name="psw" [(ngModel)]="userPassword" required>
+<br>
+<button type="submit" class="signup"  (click)="Update()">Update</button>
+
+</body>
+</html>
+
+
+<table *ngIf="trainingClick==1" class="table table-hover table-bordered" border="1" style="    margin-left: 358px;
+margin-top: -442px;">
+        <thead>
+            <tr>
+                <th>UserId</th>
+                <th>TrainingId</th>
+                <th>MentorId</th>
+                <th>SkillId</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Timeslot</th>
+                <th>Status</th>
+                <th>Progress</th>
+                <th>Rating</th>
+              
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of lists">
+            <tr>
+                    <td>{{item.userId}}</td>
+                <td>{{item.trainingId}}</td>
+                <td>{{item.mentorId}}</td>
+                <td>{{item.userId}}</td>
+                <td>{{item.startDate}}</td>
+                <td>{{item.endDate}}</td>
+                <td>{{item.timeslot}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.progress}}</td>
+                <td>{{item.rating}}</td>
+               
+              
+            </tr>
+        </tbody>
+    </table>
+<!-- {{lists|json}} -->
+</form>

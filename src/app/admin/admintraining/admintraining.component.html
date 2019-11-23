@@ -1,0 +1,34 @@
+<table class="table table-hover table-bordered" border="1" style="    margin-left: 358px;
+margin-top: -442px;">
+        <thead>
+            <tr>
+                    <th>UserId</th>
+                    <th>TrainingId</th>
+                <th>MentorId</th>
+                <th>SkillId</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Timeslot</th>
+                <th>Status</th>
+                <th>Progress</th>
+                <th>Rating</th>
+              
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of list">
+            <tr>
+                    <td>{{item.userId}}</td>
+                <td>{{item.trainingId}}</td>
+                <td>{{item.mentorId}}</td>
+                <td>{{item.userId}}</td>
+                <td>{{item.startDate}}</td>
+                <td>{{item.endDate}}</td>
+                <td>{{item.timeslot}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.progress}}</td>
+                <td>{{item.rating}}</td>
+               
+              
+            </tr>
+        </tbody>
+    </table>

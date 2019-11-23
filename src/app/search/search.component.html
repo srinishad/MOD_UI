@@ -1,0 +1,65 @@
+<style>
+input[type=text]{
+    width: 35%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  .container {
+    padding: 16px;
+  background-color: #fefefe;
+  margin: 3% auto 15% auto; 
+  border: 1px solid #888;
+  width: 40%; 
+  margin-top: 79px;
+  }
+  .registerbtn {
+  background-color:skyblue;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+</style>
+    <div class="container" style="margin-top: -666px;
+    margin-left: 326px;">
+    <label ><b>Technology</b></label>&nbsp;
+<input type="text" placeholder="Enter technology" style="margin-left: 16px;" [(ngModel)]="skills"><br>
+<button type="submit" class="registerbtn" style="margin-left: 94px;"(click)="Search()" >Search</button>
+<table class="table table-hover table-bordered" border="1" >
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+           
+            <th>Experience</th>
+            <th>Timeslot</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let item of list">
+        <tr>
+            <td>{{item.mentorName}}</td>
+            <td>{{item.mentorEmail}}</td>
+            <td>{{item.mentorNumber}}</td>
+            <td>{{item.mentorExperience}}</td>
+            <td>{{item.mentorTimeslot}}</td>
+          
+        </tr>
+    </tbody>
+</table>
+</div>

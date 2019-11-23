@@ -1,0 +1,25 @@
+<table class="table table-hover table-bordered" border="1" style="    margin-left: 358px;
+margin-top: -442px;">
+        <thead>
+            <tr>
+                    
+                <th>PaymentId</th>
+                <th>UserId</th>
+                <th>UserAmount</th>
+                <th>MentorId</th>
+                <th>MentorAmount</th>
+              
+            </tr>
+        </thead>
+        <tbody *ngFor="let item of list">
+            <tr>
+                    <td>{{item.paymentId}}</td>
+                <td>{{item.userId}}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.mentorId}}</td>
+                <td>{{item.mentorAmount}}</td>
+               
+              
+            </tr>
+        </tbody>
+    </table>
